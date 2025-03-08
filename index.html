@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HedgeDoc 1.x Note ID Tool</title>
+  </head>
+  <body>
+    <header>
+      <h1>HedgeDoc 1.x Note ID Tool</h1>
+      <p>Convert note URLs to database UUIDs and vice-versa</p>
+    </header>
+  
+    <main>
+      <noscript>
+        <p>This tool requires JavaScript to work. Please enable it in your browser.</p>
+      </noscript>
+      <p>
+        HedgeDoc 1.x stores notes with a UUID in the database (column <code>id</code>). However, the note URL is generated from that UUID but not stored in the database itself.
+        When looking for a specific note in the database, this tool can help you convert the note URL to the UUID and vice-versa.
+      </p>
+      <p>
+        <strong>Please note:</strong> This tool only works for URLs to the edit page of a note. It does not support shortids (URL from the publish page) nor user-chosen aliases in FreeURL mode.
+        <br />
+        For these, look into the <code>shortid</code> or <code>alias</code> database columns.
+      </p>
+      <form>
+        <label for="url">Note URL</label>
+        <input type="url" id="url" name="url" placeholder="https://demo.hedgedoc.org/abcdefghijklmnopqrstuv" />
+        <span class="error-message" id="url-error"></span>
+        <br />
+        <label for="uuid">Note UUID</label>
+        <input type="text" id="uuid" name="uuid" placeholder="00000000-0000-0000-0000-000000000000" />
+        <span class="error-message" id="uuid-error"></span>
+      </form>
+      <style>
+        input {
+          width: 100%;
+        }
+        .error-message {
+          color: red;
+          display: block;
+          font-size: 0.8em;
+          margin-bottom: 0.5em;
+        }
+      </style>
+    </main>
+  
+    <footer>
+      <p>Created by <a href="https://hedgedoc.org/team/">the HedgeDoc authors</a></p>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

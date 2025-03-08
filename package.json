@@ -1,0 +1,27 @@
+{
+  "name": "@hedgedoc/note-id-tool",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "author": {
+    "name": "Erik Michelson",
+    "email": "github@erik.michelson.eu",
+    "url": "https://erik.michelson.eu"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "check": "biome check index.html src/",
+    "fix": "biome check --write index.html src/"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "typescript": "5.8.2",
+    "vite": "6.2.1"
+  },
+  "dependencies": {
+    "simpledotcss": "2.3.4"
+  }
+}
